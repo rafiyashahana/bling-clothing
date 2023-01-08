@@ -18,15 +18,13 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  console.log(formFields);
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const handleSumbit = async (event) => {
     event.preventDefault();
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
