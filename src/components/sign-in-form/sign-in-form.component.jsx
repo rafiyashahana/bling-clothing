@@ -25,7 +25,6 @@ const SignInForm = () => {
     event.preventDefault();
     try {
       const response = await signInAuthWithEmailAndPassword(email, password);
-      console.log("response", response);
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":
