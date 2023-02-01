@@ -5,8 +5,8 @@ import { Outlet, Link } from "react-router-dom";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
-import { CartContext } from "../../contexts/cart.context";
 import { selectCurrentUser } from "../../store/user/user.selector";
+import { selectIsCartOpen } from "../../store/cart/cart.selector";
 
 import { ReactComponent as BlingLogo } from "../../assets/logo_.svg";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
@@ -19,7 +19,7 @@ import {
 } from "./navigation.styles";
 
 const Navigation = () => {
-  const { isCartOpen } = useContext(CartContext);
+  const isCartOpen = useSelector(selectIsCartOpen);
   const currentUser = useSelector(selectCurrentUser);
 
   return (

@@ -82,7 +82,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const updateCartItems = (newCartItems) => {
-    /* dispatch new action with payload = { newCartItems, newCartTotal, newCartCount} */
     const newCartTotal = newCartItems.reduce(
       (acc, item) => acc + item.quantity * item.price,
       0
@@ -91,14 +90,6 @@ export const CartProvider = ({ children }) => {
       (acc, item) => acc + item.quantity,
       0
     );
-    // dispatch({
-    //   type: CART_ACTION_TYPES.SET_CART_ITEMS,
-    //   payload: {
-    //     cartItems: newCartItems,
-    //     cartTotal: newCartTotal,
-    //     cartCount: newCartCount,
-    //   },
-    // });
     dispatch(
       createAction(CART_ACTION_TYPES.SET_CART_ITEMS, {
         cartItems: newCartItems,
